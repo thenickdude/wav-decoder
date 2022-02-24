@@ -63,7 +63,7 @@ function decode(buffer, opts) {
 function decodeFormat(reader, chunkSize) {
   var formatId = reader.uint16();
 
-  if (!formats.hasOwnProperty(formatId)) {
+  if (!Object.prototype.hasOwnProperty.call(formats, formatId)) {
     return new TypeError("Unsupported format in WAV file: 0x" + formatId.toString(16));
   }
 

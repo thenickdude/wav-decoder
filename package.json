@@ -6,10 +6,9 @@
   "bugs": {
     "url": "https://github.com/mohayonao/wav-decoder/issues"
   },
-  "dependencies": {},
   "devDependencies": {
-    "eslint": "^4.4.1",
-    "mocha": "^3.5.0",
+    "eslint": "^8.9.0",
+    "mocha": "^9.2.1",
     "wav-encoder": "^1.2.0"
   },
   "files": [
