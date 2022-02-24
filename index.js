@@ -88,9 +88,10 @@ function decodeData(reader, chunkSize, format, opts) {
   var numberOfChannels = format.numberOfChannels;
   var sampleRate = format.sampleRate;
   var channelData = new Array(numberOfChannels);
+  var buffer = new global.SharedArrayBuffer(numberOfChannels * 4 * length);
 
   for (var ch = 0; ch < numberOfChannels; ch++) {
-    channelData[ch] = new Float32Array(length);
+    channelData[ch] = new Float32Array(buffer, ch * 4 * length, length);
   }
 
   var retVal = readPCM(reader, channelData, length, format, opts);
